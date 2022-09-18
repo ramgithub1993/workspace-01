@@ -1,9 +1,20 @@
+// OBTENGO EL ID DE LA CATEGORÍA
+const getId = () => {
+  const id = localStorage.getItem("catID");
+  return id;
+};
+
+// URL A LA CUAL QUEREMOS INGRESAR
+const PRODUCTS_URL =
+  "https://japceibal.github.io/emercado-api/cats_products/" + getId() + ".json";
+
+
+
+
 const CATEGORIES_URL = "https://japceibal.github.io/emercado-api/cats/cat.json";
 const PUBLISH_PRODUCT_URL =
   "https://japceibal.github.io/emercado-api/sell/publish.json";
 
-const PRODUCTS_URL =
-  "https://japceibal.github.io/emercado-api/cats_products/101.json";
 
 const PRODUCT_INFO_URL = "https://japceibal.github.io/emercado-api/products/";
 const PRODUCT_INFO_COMMENTS_URL =
