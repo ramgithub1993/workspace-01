@@ -68,6 +68,12 @@ const BTN_FILTRAR = document.getElementById("rangeFilterCount");
 
 const BTN_LIMPIAR = document.getElementById("clearRangeFilter");
 
+// Funcion que guarda la ID del producto en la local storage
+const setProductID = (id) => {
+  localStorage.setItem("productID", id);
+  window.location = "product-info.html";
+};
+
 // Funcion que agrega al HTML la lista de productos
 const showProductsList = (currentArray) => {
   let htmlContentToAppend = "";
@@ -82,7 +88,8 @@ const showProductsList = (currentArray) => {
     htmlContentToAppend +=
 
       `
-    <div class="card list-group-item list-group-item-action">
+    <div onclick="setProductID(${element.id})" 
+    class="card list-group-item list-group-item-action">
     <div class="row">
     <div class="col-3">
     <img src="` +
