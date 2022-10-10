@@ -42,17 +42,62 @@
             <li class="nav-item">
               <a class="nav-link" href="sell.html">Vender</a>
             </li>
-            <li class="nav-item">
-              <a  id="profile" class="nav-link" href="my-profile.html"></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+            <!--PERFIL-->
+            <li class="dropdown nav-item">
+              <a
+                class="dropdown-toggle nav-link me-2"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="profile"
+              >
+              </a>
+
+              <!-- DROP-DOWN-->
+              <ul class="dropdown-menu dropdown-menu-dark p-2">
+                <li>
+                  <a class="dropdown-item nav-link" href="cart.html"
+                    >Mi carrito
+                  </a>
+                  <li>
+                    <a class="dropdown-item nav-link" href="my-profile.html"
+                      >Mi perfil</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item nav-link"
+                      href="index.html"
+                      onclick="localStorage.removeItem('email')"
+                      >Cerrar sesión</a>
+                </ul>
+            </div>
+         </div>
+      </nav>
     <main>
       
 
       <div class="container p-4 pb-0 mb-0" id="product-info-container"></div>
+
+      <!-- CARROUSEL -->
+      
+
+      <div class="container bg-white p-4">
+        <div class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner" id="carousel-inner"></div>
+        </div>
+      </div>
+
+
+      <div class="container p-4 pb-0 mb-0">
+        <hr />
+        <ul
+          id="comments-container"
+          class="list-group list-group-flush mb-3"
+        ></ul>
+        <hr class="mb-5" />
+      </div>
 
       
       <div class="container p-4 pt-0">
@@ -83,6 +128,10 @@
         <button id="enviar" type="submit" class="btn btn-primary mt-3">
           Enviar
         </button>
+        <hr />
+        <h2 class="mb-5">Productos relacionados</h2>
+        <div id="related" class="row mt-4 mb-3"></div>
+      </div>
       </div>
     </main>
     

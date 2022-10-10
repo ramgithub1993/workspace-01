@@ -58,12 +58,38 @@
             <li class="nav-item">
               <a class="nav-link" href="sell.html">Vender</a>
             </li>
-            <li class="nav-item">
-              <a  id="profile" class="nav-link" href="my-profile.html"></a>
-            </li>
-          </ul>
+            <!--PERFIL-->
+            <li class="dropdown nav-item">
+              <a
+                class="dropdown-toggle nav-link me-2"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="profile"
+              >
+              </a>
+
+              <!-- DROP-DOWN-->
+              <ul class="dropdown-menu dropdown-menu-dark p-2">
+                <li>
+                  <a class="dropdown-item nav-link" href="cart.html"
+                    >Mi carrito
+                  </a>
+                  <li>
+                    <a class="dropdown-item nav-link" href="my-profile.html"
+                      >Mi perfil</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item nav-link"
+                      href="index.html"
+                      onclick="localStorage.removeItem('email')"
+                      >Cerrar sesión</a>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- MAIN -->
