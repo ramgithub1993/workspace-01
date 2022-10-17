@@ -35,8 +35,10 @@ const PRODUCT_INFO_COMMENTS_URL =
 getProductId() +
 ".json";
 
+// URL que muestra la información del carrito
+const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/25801.json";
 
-const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
+
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 

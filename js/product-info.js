@@ -77,7 +77,11 @@ const showCarousel = (array) => {
 const showProductInfo = (obj) => {
   PRODUCT_CONTAINER.innerHTML += `
   
+  <div class="d-flex justify-content-between">
   <h2> ${obj.name} </h2>
+  <div id="btn-comprar" class="btn btn-success me-5 fw-bold p-2 d-flex align-items-center">Comprar</div>
+
+  </div>
   
   <hr class="mb-5">
   
@@ -175,6 +179,19 @@ urlArray.forEach((url) => {
         showProductInfo(product);
         showrelated(related);
         showCarousel(images);
+        const BTN_COMPRAR = document.getElementById("btn-comprar");
+        BTN_COMPRAR.onclick = () => {
+          if (localStorage.getItem("buys")) {
+            let buysList = JSON.parse(localStorage.getItem("buys"));
+
+            buysList.push(product);
+
+            localStorage.setItem("buys", JSON.stringify(buysList));
+          } else {
+            localStorage.setItem("buys", JSON.stringify([product]));
+          }
+          window.location = "cart.html";
+        };
 
       } else if (resultObj.status === "ok") {
         const comments = resultObj.data;
