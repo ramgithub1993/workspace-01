@@ -1,6 +1,6 @@
 "use strict";
 
-// Alerta en caso de que el input este vacio
+// Alerta de input vacio
 
 function showAlertError() {
   document.getElementById("alert-danger").classList.add("show");
@@ -32,6 +32,8 @@ const STARS = document.getElementById("inputGroupSelect");
 // Array que contiene las URLs que vamos a utilizar
 const urlArray = [PRODUCT_INFO_URL, PRODUCT_INFO_COMMENTS_URL];
 
+// Iniciamos una lista vacia
+let buys = [];
 // Funcion que devuelve las imagenes del producto
 const getProductImages = (array) => {
   let res = "";
@@ -182,13 +184,24 @@ urlArray.forEach((url) => {
         const BTN_COMPRAR = document.getElementById("btn-comprar");
         BTN_COMPRAR.onclick = () => {
           if (localStorage.getItem("buys")) {
-            let buysList = JSON.parse(localStorage.getItem("buys"));
+            buys = JSON.parse(localStorage.getItem("buys"));
+          }
 
-            buysList.push(product);
-
-            localStorage.setItem("buys", JSON.stringify(buysList));
+          if (buys.some((element) => element.id === product.id)) {
+            return;
+            
           } else {
-            localStorage.setItem("buys", JSON.stringify([product]));
+            let item = {
+              id: product.id,
+              count: 1,
+              name: product.name,
+              unitCost: product.cost,
+              image: product.images[0],
+              currency: product.currency,
+            };
+
+            buys.push(item);
+            localStorage.setItem("buys", JSON.stringify(buys));
           }
           window.location = "cart.html";
         };
